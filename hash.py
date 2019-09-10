@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
         imagen = cv2.cvtColor(imagen, cv2.COLOR_BGR2GRAY)
         resultados[archivo] = dhash(imagen, archivo)
-
+    cantidad_imagenes = len(resultados)
     duplicados = hallarDuplicados(resultados)
 
 #Guardar un archivo de texto con los resultados
@@ -54,4 +54,4 @@ if __name__ == "__main__":
             archivo_salida.write('{}: {}\n'.format(clave, valor))
 
     tiempo_final = time()
-    print('El tiempo de ejecucion fue: {}'.format(tiempo_final - tiempo_inicial))
+    print('Se analizaron {} imágenes en {} segundos.'.format(cantidad_imagenes,tiempo_final - tiempo_inicial))
