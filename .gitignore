@@ -1,3 +1,4 @@
 .vscode
 /salida/*
 salida.txt
+.DS_Store
